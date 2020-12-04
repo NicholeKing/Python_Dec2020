@@ -8,7 +8,7 @@
 * Activate your virtual environment using the proper syntax of your OS
     * Mac/Linux: source pyEnv/bin/activate
     * Windows Cmd Prompt: call pyEnv/Scripts/activate
-    * Widnows git bash: source pyEnv/Scripts/activate
+    * Windows git bash: source pyEnv/Scripts/activate
 * You should see (pyEnv) at the front of your command line now
 * Run `pip list` to check if Flask is installed or not
 * If Flask isn't installed, install it with `pip install Flask`
