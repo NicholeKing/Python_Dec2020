@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to lunch</h1>
+    <img width="500px" src="{{url_for('static', filename='/img/hotdog.jpg')}}" alt="hotdog">
+    <!-- code from if we had just an array with strings -->
+    <!-- {% for i in range(my_menu|length) %}
+        {% if my_menu[i][0] == "C" %}
+            <h2 style="color:orange;"><u>#{{i + 1}} {{ my_menu[i] }}</u></h2>
+        {% else %}
+        <h2 style="color:red;"><em>#{{i + 1}} {{ my_menu[i] }}</em></h2>
+        {% endif %}
+    {% endfor %} -->
+    {% for j in my_menu %}
+        <h2><u><a href="#">{{ j.name }}</a></u></h2>
+        <h4>Ingredients
+        <ul>
+            {% for k in j.ingredients %}
+            <li>{{ k }}</li>
+            {% endfor %}
+        </ul></h4>
+    {% endfor %}
+</body>
+</html>
