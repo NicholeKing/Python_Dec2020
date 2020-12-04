@@ -10,6 +10,8 @@
     * Windows Cmd Prompt: call pyEnv/Scripts/activate
     * Widnows git bash: source pyEnv/Scripts/activate
 * You should see (pyEnv) at the front of your command line now
+* Run `pip list` to check if Flask is installed or not
+* If Flask isn't installed, install it with `pip install Flask`
 * cd over to where you want your project to be (NOT inside your my_environments folder)
 * Create a folder named for your project (mkdir folderName)
 * Open the folder in VS Code (code .)
