@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Here are some facts we think we know about Baby Yoda</h1>
+    <img src="{% static 'images/yodagif.gif' %}" alt="Yoda Gif">
+    <h3>Real name: Grogu</h3>
+    <h3>Born: HDSKADH</h3>
+    <h3>Hobbies:</h3>
+    <ul>
+        <li>Choking things</li>
+        <li>Eating</li>
+        <li>Playing with balls</li>
+        <li>Driving ships</li>
+    </ul>
+    <a href="/redirect">Click here to go back to the main page</a>
+    <a href="/">Home</a>
+</body>
+</html>
