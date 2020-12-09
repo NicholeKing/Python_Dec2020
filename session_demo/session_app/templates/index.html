@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1 class="jumbotron">Dragogatchi</h1>
+    <h3 class="text-center">Happiness: {{ request.session.happiness }} | Energy: {{ request.session.energy }} | Meals: {{ request.session.meals }} | Rested: {{ request.session.rested }} </h3>
+    <img width="200px" class="img_block" src="{% static 'images/dragon.png' %}" alt="Baby Dragon">
+    {% if request.session.alive %}
+    <div class="text-center">
+        <a href="/play" class="btn btn-primary">Play</a>
+        <a href="/feed" class="btn btn-info">Feed</a>
+        <a href="/sleep" class="btn btn-danger">Sleep</a>
+        <a href="/work" class="btn btn-warning">Work</a>
+    </div>
+    {% else %}
+    <div class="text-center">
+        <a href="/play" class="btn btn-primary disabled">Play</a>
+        <a href="/feed" class="btn btn-info disabled">Feed</a>
+        <a href="/sleep" class="btn btn-danger disabled">Sleep</a>
+        <a href="/work" class="btn btn-warning disabled">Work</a>
+    </div>
+    {% endif %}
+    <h3 class="text-center">{{ request.session.death }}</h3>
+    <a href="/reset" class="btn btn-dark">Reset</a>
+</body>
+</html>
