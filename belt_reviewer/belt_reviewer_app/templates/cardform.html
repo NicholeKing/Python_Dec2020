@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Site</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/dashboard">{{ logged_in_user.username }}</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/dashboard">Home</a>
+                <a class="nav-link" href="/cards">All Cards</a>
+                <a class="nav-link" href="/users">Users</a>
+                <a class="nav-link active" href="/cards/new">Add Card</a>
+                <a class="nav-link" href="/logout">Logout</a>
+            </div>
+        </nav>
+        <h1>Add a Card</h1>
+        {% if messages %}
+        <ul>
+            {% for m in messages %}
+            <li class="text-danger">{{ m }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/cards/add" class="col-sm-6" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="text" name="image" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="card_type">Card Type</label>
+                <select name="card_type" class="form-control">
+                    <option value="Fire">Fire</option>
+                    <option value="Water">Water</option>
+                    <option value="Grass">Grass</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Trainer">Trainer</option>
+                    <option value="Energy">Energy</option>
+                </select>
+            </div>
+            <input type="submit" value="+ Add Card" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+</html>
